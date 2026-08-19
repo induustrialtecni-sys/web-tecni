@@ -17,7 +17,8 @@
 Tooplate 2117 Infinite Loop
 https://www.tooplate.com/view/2117-infinite-loop
 -->
-
+  <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>    
     <!-- Hero section -->
@@ -541,4 +542,15 @@ https://www.tooplate.com/view/2117-infinite-loop
       });
     </script>
   </body>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </html>
